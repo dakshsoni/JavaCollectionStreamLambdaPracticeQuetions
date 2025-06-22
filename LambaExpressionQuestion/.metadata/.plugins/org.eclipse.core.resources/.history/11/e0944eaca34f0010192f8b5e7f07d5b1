@@ -1,0 +1,5 @@
+package com.lambda.expression.interview.questions;
+
+public interface Calculator {
+
+}

@@ -48,7 +48,7 @@ public class LambdaExpressionQuetions {
 		Calculator divideTwoNum = (a, b) -> a/b;
 		Calculator subtractTwoNum = (a, b) -> a-b;
 		
-		System.out.println("Add two numbers 5 or 10 = " + addTwoNum.calculateResult(5,10));
+		System.out.println("Add two numbers 5 and 10 = " + addTwoNum.calculateResult(5,10));
 		System.out.println("Multiply two numbers 5 and 10 = " + multiplyTwoNum.calculateResult(5,10));
 		System.out.println("Subtract 10 from 5 = " + subtractTwoNum.calculateResult(10,5));
 		System.out.println("10 divided by 5 = " + divideTwoNum.calculateResult(10,5));

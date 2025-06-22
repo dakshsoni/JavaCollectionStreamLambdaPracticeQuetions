@@ -1,4 +1,4 @@
-INDEX VERSION 1.134+D:\Deepak\Interview Questions\LambaExpressionQuestion\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.134+D:\Deepak\Interview Questions\JavaCollectionStreamLambdaPracticeQuetions\LambaExpressionQuestion\.metadata\.plugins\org.eclipse.jdt.core
 428847461.index
-485885431.index
 1865797976.index
+485885431.index

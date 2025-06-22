@@ -1,0 +1,8 @@
+package com.lambda.expression.interview.questions;
+
+@FunctionalInterface
+public interface Calculator {
+	
+	public R calculateResult(P p, T t);
+
+}
