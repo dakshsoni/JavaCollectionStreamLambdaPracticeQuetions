@@ -1,0 +1,25 @@
+package com.lambda.expression.interview.questions;
+
+import java.util.List;
+
+public class LambdaExpressionQuetions {
+
+	public static void main(String[] args) {
+		
+		// 1.  Iterating List using lambda Expression
+		
+		List<Integer> list = List.of(1,2,4,5,2,6,8);
+		
+		list.stream().forEach(System.out::print);
+		
+		// 2. Filtering a List using lambda Expression
+		
+		List<Integer> list2 = list.stream().filter(p -> p % 2 == 0).toList();
+		
+		System.out.println("\nAll even numbers : " + list2);
+		
+		
+
+	}
+
+}

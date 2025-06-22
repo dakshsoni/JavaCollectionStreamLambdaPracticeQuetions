@@ -1,0 +1,43 @@
+package com.lambda.expression.interview.questions;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class LambdaExpressionQuetions {
+
+	public static void main(String[] args) {
+
+		// 1. Iterating List using lambda Expression
+
+		List<Integer> list = List.of(1, 2, 4, 5, 2, 6, 8);
+
+		list.stream().forEach(System.out::print);
+
+		// 2. Filtering a List using lambda Expression
+
+		List<Integer> list2 = list.stream().filter(p -> p % 2 == 0).toList();
+
+		System.out.println("\nAll even numbers : " + list2);
+
+		// 3. Sorting a List using lambda Expression
+
+		List<Integer> assendingSortUsingStream = list.stream().sorted().toList();
+		List<Integer> accendingSortUsingCollectionSort = new ArrayList<>(list);
+		accendingSortUsingCollectionSort.sort(null);
+				
+		System.out.println("\nSorted List from list in Accending Order using stream : " + assendingSortUsingStream);
+		System.out.println("\nSorted List from list in Accending Order using collection sort : " + accendingSortUsingCollectionSort);
+
+		Comparator<Integer> comparator = Comparator.comparing(Integer::intValue).reversed();
+		
+		List<Integer> dessendingSortUsingStream = list.stream().sorted(comparator).toList();
+		List<Integer> dessendingSortUsingCollectionSort = new ArrayList<>(list);
+		dessendingSortUsingCollectionSort.sort(comparator);
+
+		System.out.println("\nSorted List from list in Decending Order using Stream : " + dessendingSortUsingStream);
+		System.out.println("\nSorted List from list in Decending Order using Collection sort : " + dessendingSortUsingCollectionSort);
+
+	}
+
+}
