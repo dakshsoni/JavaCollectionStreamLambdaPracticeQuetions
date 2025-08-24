@@ -125,6 +125,61 @@ public class StreamPracticeSheet {
 		Map<Boolean, List<Integer>> partitionNumBasedOnOddEven = DataProvider.numbers.stream().collect(Collectors.partitioningBy(p -> p % 2 == 0));
 		System.out.println(partitionNumBasedOnOddEven + "\n");
 		
+		System.out.println("************* 22. Print All employee name *************\n");
+		
+		List<Object> EmpNames = DataProvider.ListOfEmp.stream().map(p -> p.get("name")).toList();
+		System.out.println(EmpNames + "\n");
+		
+		System.out.println("************* 23. Filter All Trainee *************\n");
+		
+		List<Map<String, Object>> allTrainees = DataProvider.ListOfEmp.stream().filter(p -> "Trainee".equals(p.get("Designation"))).toList();
+		System.out.println(allTrainees + "\n");
+		
+		System.out.println("************* 24. Extract Salary as a list *************\n");
+		
+		List<Object> salariesOfEmployees = DataProvider.ListOfEmp.stream().map(p -> p.get("Salary")).toList();
+		System.out.println(salariesOfEmployees + "\n");
+		
+		System.out.println("************* 25. Total Salary of all Employees *************\n");
+		
+		int totalSalary = DataProvider.ListOfEmp.stream().mapToInt(p -> (Integer)p.get("Salary")).sum();
+		System.out.println(totalSalary + "\n");
+		
+		System.out.println("************* 26. Group Employees by designation *************\n");
+		
+		
+		Map<String, List<Map<String, Object>>> groupEmployeesByDesignation = DataProvider.ListOfEmp.stream().collect(Collectors.groupingBy(a -> (String)a.get("Designation")));
+		System.out.println(groupEmployeesByDesignation + "\n");
+		
+		System.out.println("************* 27. Max salary of Employee *************\n");
+		
+		
+		Map<String, Object> maxSalary = DataProvider.ListOfEmp.stream().max(Comparator.comparingInt(a -> (Integer)a.get("Salary"))).get();
+		System.out.println(maxSalary + "\n");
+		
+		System.out.println("************* 28. Sort Employee by salary *************\n");
+		
+		
+		//List<Map<String, Object>> sortBySalary = DataProvider.ListOfEmp.stream().sorted((a,b) -> (Integer)a.get("Salary") - (Integer)b.get("Salary")).toList();
+		List<Map<String, Object>> sortBySalary = DataProvider.ListOfEmp.stream().sorted(Comparator.comparingInt(a -> (Integer)a.get("Salary"))).toList();
+		System.out.println(sortBySalary + "\n");
+		
+		
+		System.out.println("************* 29. Average salary of Employee *************\n");
+		
+		Double avgSalary = DataProvider.ListOfEmp.stream().mapToInt(p -> (Integer)p.get("Salary")).average().getAsDouble();
+		System.out.println(avgSalary + "\n");
+		
+		System.out.println("************* 30. Name of Employee whoes salary > 8000 *************\n");
+		
+		List<Object> NamesOfEmpSalaryGraterThen8k = DataProvider.ListOfEmp.stream().filter(p -> (Integer)p.get("Salary") > 8000).map(p -> p.get("name")).toList();
+		System.out.println(NamesOfEmpSalaryGraterThen8k + "\n");
+		
+		System.out.println("************* 31. Check if any Employee is QA > 8000 *************\n");
+		
+		Boolean checkAnyWhoIsQA = DataProvider.ListOfEmp.stream().anyMatch(p -> "QA".equals((String)p.get("Designation")));
+		System.out.println(checkAnyWhoIsQA + "\n");
+		
 		
 		
 	
